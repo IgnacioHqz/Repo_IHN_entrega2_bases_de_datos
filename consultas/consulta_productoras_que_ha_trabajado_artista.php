@@ -5,7 +5,7 @@
 <body>
     <?php
     require("../config/conexion.php");
-    $var = $_POST("tipo");
+    $var = $_POST("artista");
     $query = "SELECT * FROM eventos LEFT JOIN artistas ON eventos.aid=artistas.aid;"; #cita ihn: COLOCAR!
     #$query_productoras_que_trabajo_artista = "SELECT DISTINCT pid FROM $query WHERE $query.nombre_artistico='$var';";
     #$result = $db -> prepare($query_productoras_que_trabajo_artista);
