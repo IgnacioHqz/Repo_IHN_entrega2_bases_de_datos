@@ -6,47 +6,25 @@
     <?php
     require("../config/conexion.php");
     $var = $_POST["artista"];
-    $query = "SELECT * FROM eventos LEFT JOIN artistas ON eventos.aid=artistas.aid;"; #cita ihn: COLOCAR!
+    #$query = "SELECT * FROM eventos LEFT JOIN artistas ON eventos.aid=artistas.aid;"; #cita ihn: COLOCAR!
+
+    #-------ihn denuevo-------
+    $query = "SELECT DISTINCT segundaTablaIHN.nombre FROM (SELECT * FROM productoras, (SELECT * FROM eventos, #cita: clase SQL AVANZADO online
+     artistas WHERE eventos.aid = artistas.aid) as primeraTablaIHN  WHERE productoras.pid = 
+     primeraTablaIHN.pid) as segundaTablaIHN WHERE nombre_artistico='$var';";   #ihn: no estoy seguro de quien va primero en el igual para hacer el join
 
     $result = $db -> prepare($query);
-    $result -> execute();
+    $result -> execute(); 
     $dataCollected = $result -> fetchAll();
-    print_r($dataCollected)
-
-#    $query_productoras_que_trabajo_artista = "SELECT DISTINCT pid FROM $dataCollected WHERE $.nombre_artistico='$var';";
-#    $result = $db -> prepare($query_productoras_que_trabajo_artista);
-#    $result -> execute();
-    
-
-#    $query_join_entre_obtenido_y_tabla_productora = "SELECT * FROM $result LEFT JOIN productoras ON $result.pid=productoras.pid;";
-#    $result = $db -> prepare($query_join_entre_obtenido_y_tabla_productora);
-#    $result -> execute();
-    
-
-#    $query_para_obtener_productoras = "SELECT DISTINCT nombre FROM $result;";
-#    $result = $db -> prepare($query_para_obtener_productoras);
-#    $result -> execute();
-#    $dataCollected = $result -> fetchAll();
     ?>
-
+    
     <table>
         <tr>
-            <th>eid</th>
-            <th>evento</th>
-            <th>recinto</th>
-            <th>aid</th>
-            <th>ciudad</th> 
-            <th>pais</th>
-            <th>fecha_inicio</th>
-            <th>pid</th>
-            <th>nombre_artistic</th>
-            <th>inicio_carrera</th>
-            <th>ncontaco</th>
-
+            <th>Nombre de la productora</th>
         </tr>
-    <?php 
-    foreach ($dataCollected as $p) {
-        echo "<tr> <td>$p[0]</td></tr>";
+    <?php
+    foreach($dataCollected as $p) {
+        echo "<tr> <td>$p[0]</td> </tr>";
     }
     ?>
     </table>
