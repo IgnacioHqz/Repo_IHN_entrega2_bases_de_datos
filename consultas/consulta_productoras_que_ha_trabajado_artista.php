@@ -14,17 +14,22 @@
 
     $result = $db -> prepare($query);
     $result -> execute();
-    $dataCollected = $result -> fetchAll();
+    #$dataCollected = $result -> fetchAll();
 
-    $query_productoras_que_trabajo_artista = "SELECT DISTINCT pid FROM $dataCollected WHERE $dataCollected.nombre_artistico='$var';";
-    $result = -> execute();
-    $dataCollected = $result -> fetchAll();
+    $query_productoras_que_trabajo_artista = "SELECT DISTINCT pid FROM $result WHERE $result.nombre_artistico='$var';";
+    $result = $db -> prepare($query_productoras_que_trabajo_artista);
+    $result -> execute();
+    #$dataCollected = $result -> fetchAll();
 
-    $query_join_entre_obtenido_y_tabla_productora = "SELECT * FROM $dataCollected LEFT JOIN productoras ON $dataCollected.pid=productoras.pid;";
-    $result = -> execute();
-    $dataCollected = $result -> fetchAll();
+    $query_join_entre_obtenido_y_tabla_productora = "SELECT * FROM $result LEFT JOIN productoras ON $result.pid=productoras.pid;";
+    $result = $db -> prepare($query_join_entre_obtenido_y_tabla_productora);
+    $result -> execute();
+    #$dataCollected = $result -> fetchAll();
 
-    $query_para_obtener_productoras = "SELECT DISTINCT nombre FROM $dataCollected;";
+    $query_para_obtener_productoras = "SELECT DISTINCT nombre FROM $result;";
+    $result = $db -> prepare($query_para_obtener_productoras);
+    $result -> execute();
+    $dataCollected = $result -> fetchAll();
     ?>
 
     <table>
