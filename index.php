@@ -79,10 +79,31 @@
         <input type="submit" value="Buscar por artista">
     </form>      
 
+    <!--consulta 2 ig-->
+    <!-- h3 align="center"> Para conocer todos los hoteles en los que se ha quedado un artista, y 
+        cuántas veces se ha hospedado en cada uno, introduzca el nombre del artista abajo </h3--> 
+    <h3 align="center">Si quiere conocer el número de entradas que ha entregado un artista, seleccione un artista abajo</h3>
+    <?php
+    require("config/conexion.php");
+    $query = "SELECT DISTINCT nombre_artistico FROM artistas;">;
+    $result = $db -> prepare($query);
+    $result -> execute();
+    $dataCollected = $result -> fetchAll();
+    ?>
+    <form align="center" action="consultas/consulta_entregar_numero_entradas_cortesia.php" method="post">
+        seleccionar artista:
+        <select name="artista">
+            <?php
+            foreach ($dataCollected as $d) {
+                echo "<option value=$d[0]>$d[0]</option>";
+            }
+            ?>
+        </select>
+        <br><br>
+        <input type="submit" value="Buscar por artista">
+    </form>
 
-    <h3 align="center"> Para conocer todos los hoteles en los que se ha quedado un artista, y 
-        cuántas veces se ha hospedado en cada uno, introduzca el nombre del artista abajo </h3> 
-    <!--form align="center" action="consultas/"-->
+
     <h3 align="center">Para mostrar al artista que ha entregado la mayor cantidad de entradas de 
         contesía, haga clic en el boton de abajo </h3>
     <!-- form align="center" action="consultas/"-->
