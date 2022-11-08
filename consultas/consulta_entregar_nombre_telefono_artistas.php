@@ -23,6 +23,7 @@
     foreach($productoras as $productora){
         echo "<tr><td>$productora[0]</td><td>$productora[1]</td></tr>";
     }
+    ?>
 </table>
 
 <?php include("../templatesihn/footer.html"); ?>
