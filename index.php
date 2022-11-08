@@ -6,9 +6,15 @@
     <h3 align="center"> Verónica Baeza - Ignacio Henríquez Novoa </h3>
     <br>
     <br>
+
+
+
     <h3 align="center"> Entregar un listado del nombre y teléfono de contacto de todos los artistas </h3>
     <form align="center" action="consultas/consulta_entregar_nombre_telefono_artistas.php" method="post">
         <input type="submit" value="Buscar">
+    </form>
+
+    <br>
 
 
     <h3 align="center"> Para conocer el número de entradas de cortesía que ha entregado un artista, 
@@ -16,7 +22,7 @@
     <?php
     require("config/conexion.php");
     $query = "SELECT DISTINCT nombre_artistico FROM artistas;";
-    $result = $db -> prepare($query);
+    $result = $db -> prepare($query);  
     $result -> execute();
     $dataCollected = $result -> fetchAll();
     ?>
