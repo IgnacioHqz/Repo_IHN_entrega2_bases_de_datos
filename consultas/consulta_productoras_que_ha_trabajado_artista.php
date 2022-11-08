@@ -9,7 +9,9 @@
     #$query = "SELECT * FROM eventos LEFT JOIN artistas ON eventos.aid=artistas.aid;"; #cita ihn: COLOCAR!
 
     #-------ihn denuevo-------
-    $query = "SELECT * segundaTablaIHN.nombre FROM (SELECT * FROM productoras JOIN (SELECT * FROM eventos JOIN artistas ON eventos.aid = artistas.aid) as primeraTablaIHN  ON productoras.pid = primeraTablaIHN.pid) as segundaTablaIHN;"; #WHERE segundaTablaIHN.nombre_artistico='$var';";   #ihn: no estoy seguro de quien va primero en el igual para hacer el join, CITA IHN: clase SQL avanzado online
+    $query = "SELECT segundaTablaIHN.nombre FROM (SELECT * FROM productoras JOIN 
+    (SELECT * FROM eventos JOIN artistas ON eventos.aid = artistas.aid) AS primeraTablaIHN  ON 
+    productoras.pid = primeraTablaIHN.pid) AS segundaTablaIHN;"; #WHERE segundaTablaIHN.nombre_artistico='$var';";   #ihn: no estoy seguro de quien va primero en el igual para hacer el join, CITA IHN: clase SQL avanzado online
 
     $result = $db -> prepare($query);
     $result -> execute(); 
