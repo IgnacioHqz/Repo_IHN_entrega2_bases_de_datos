@@ -85,7 +85,7 @@
     <h3 align="center">Si quiere conocer el número de entradas que ha entregado un artista, seleccione un artista abajo</h3>
     <?php
     require("config/conexion.php");
-    $query = "SELECT DISTINCT nombre_artistico FROM artistas;">;
+    $query = "SELECT DISTINCT nombre_artistico FROM artistas;";
     $result = $db -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
