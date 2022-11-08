@@ -15,7 +15,7 @@
     $result -> execute();
     
     #$dataCollected = $result -> fetchAll();
-    print_r($result->fetchColumn());
+    print_r($result);
     ?>
 
 
