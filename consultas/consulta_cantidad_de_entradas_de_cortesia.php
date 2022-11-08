@@ -4,7 +4,7 @@
     <?php
         require("../config/conexion.php");
         $var = $_POST("nombre_artistico");
-        $query_para_obtener_aid = "SELECT aid FROM Artistas WHERE nombre_artistico = '$var';"; 
+        $query_para_obtener_aid = "SELECT aid FROM artistas WHERE nombre_artistico = '$var';"; 
         $result = $db -> prepare($query)
         $dataCollected = $result -> fetchAll();
         $aid_de_artista = $dataCollected[0]

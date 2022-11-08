@@ -4,7 +4,7 @@
 <body>
 <?php   
     require("../config/conexion.php");
-    $query = "SELECT nombre, n_contacto FROM productoras";
+    $query = "SELECT nombre, n_contacto FROM productoras;";
     $result = $db -> prepare($query);
     $result -> execute();
     $productoras = $result -> fetchAll();
