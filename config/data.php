@@ -2,6 +2,6 @@
 
 <?php
     $user = 'grupo107';
-    $password = 'bhenriquez';
+    $password = 'grupo107';
     $databaseName = 'grupo107e2';
 ?>
