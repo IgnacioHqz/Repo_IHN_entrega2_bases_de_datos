@@ -21,8 +21,7 @@
         introduzca el nombre abajo </h3>
     <?php
     require("config/conexion.php");
-    $query = "SELECT DISTINCT nombre_artistico FROM artistas;";
-    $result = $db -> prepare($query);  
+    $result = $db -> prepare("SELECT DISTINCT nombre_artistico FROM artistas;");  
     $result -> execute();
     $dataCollected = $result -> fetchAll();
     ?>
@@ -40,15 +39,28 @@
     </form>
 
 
+
+
     <h3 align="center"> Para conocer los datos del último tour (el más reciente) de un artista, 
         introduzca el nombre abajo </h3>
     <form align="center" action="consultas/">
+
+
+
+
+
+
     <h3 align="center"> Para conocer los países que serán visitados en un tour, introduzca el 
         nombre del tour abajo </h3>
     <form align="center" action="consultas/">
+
+
+
     <h3 align="center"> Para conocer todas las productoras con las que ha trabajado un artista, 
         introduzca el nombre del artista abajo </h3>
     <form align="center" action="consultas/">
+
+    
     <h3 align="center"> Para conocer todos los hoteles en los que se ha quedado un artista, y 
         cuántas veces se ha hospedado en cada uno, introduzca el nombre del artista abajo </h3> 
     <form align="center" action="consultas/">
