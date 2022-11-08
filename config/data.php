@@ -1,4 +1,4 @@
-#Ignacio Henriquez novoa. 07-11-2022
+<!-- Ignacio Henriquez novoa. 07-11-2022 -->
 
 <?php
     $user = 'grupo107';

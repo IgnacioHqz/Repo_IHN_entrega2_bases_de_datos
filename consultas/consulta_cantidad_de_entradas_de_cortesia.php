@@ -1,4 +1,4 @@
-#Ignacio Henríquez Novoa 07-11-2022
+<!-- Ignacio Henríquez Novoa 07-11-2022 -->
 <?php include('../templatesihn/header.html');   ?>
 <body>
     <?php

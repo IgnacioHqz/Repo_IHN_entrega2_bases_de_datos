@@ -18,7 +18,7 @@
 
 
     <h3 align="center"> Para conocer el número de entradas de cortesía que ha entregado un artista, 
-        introduzca el nombre abajo </h3>
+        seleccione el nombre abajo </h3>
     <?php
     require("config/conexion.php");
     $result = $db -> prepare("SELECT DISTINCT nombre_artistico FROM artistas;");  
@@ -55,12 +55,30 @@
     <form align="center" action="consultas/">
 
 
-
+    <!--Consulta 5 i-->
     <h3 align="center"> Para conocer todas las productoras con las que ha trabajado un artista, 
-        introduzca el nombre del artista abajo </h3>
-    <form align="center" action="consultas/">
+        seleccione el nombre del artista abajo </h3>
+    <?php 
+    require("config/conexion.php");
+    $query = "SELECT DISTINCT nombre_artistico FROM artistas;";
+    $result = $db -> prepare($query);
+    $result -> execute();
+    $dataCollected = $result -> fetchAll();
+    ?>
+    <form align="center" action="consultas/consulta_productoras_que_ha_trabajado_artista.php" method="post">
+        Seleccionar artista:
+        <select name="artista">
+            <?php
+            foreach ($dataCollected as $d) {
+                echo "<option value=$d[0]>$d[0]</option>";
+            }
+            ?>
+        </select>
+        <br><br>
+        <input type="submit" value="Buscar por artista">
+    </form>      
 
-    
+
     <h3 align="center"> Para conocer todos los hoteles en los que se ha quedado un artista, y 
         cuántas veces se ha hospedado en cada uno, introduzca el nombre del artista abajo </h3> 
     <form align="center" action="consultas/">

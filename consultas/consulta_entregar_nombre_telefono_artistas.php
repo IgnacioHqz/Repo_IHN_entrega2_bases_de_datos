@@ -1,10 +1,10 @@
-#Ignacio Henriquez Novoa 07-11-2022 cita: video ayudantia semestres pasado
+<!-- Ignacio Henriquez Novoa 07-11-2022 cita: video ayudantia semestres pasado -->
 <?php include('../templatesihn/header.html');   ?>
 
 <body>
 <?php   
     require("../config/conexion.php");
-    $query = "SELECT nombre, n_contacto FROM productoras;";
+    $query = "SELECT nombre_artistico, n_contacto FROM artistas;";
     $result = $db -> prepare($query);
     $result -> execute();
     $productoras = $result -> fetchAll();
