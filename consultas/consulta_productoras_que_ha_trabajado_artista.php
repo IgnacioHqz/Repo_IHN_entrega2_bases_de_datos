@@ -31,7 +31,18 @@
 
     <table>
         <tr>
-            <th>Nombre productora</th>
+            <th>eid</th>
+            <th>evento</th>
+            <th>recinto</th>
+            <th>aid</th>
+            <th>ciudad</th> 
+            <th>pais</th>
+            <th>fecha_inicio</th>
+            <th>pid</th>
+            <th>nombre_artistic</th>
+            <th>inicio_carrera</th>
+            <th>ncontaco</th>
+
         </tr>
     <?php 
     foreach ($dataCollected as $p) {
