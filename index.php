@@ -15,7 +15,7 @@
         introduzca el nombre abajo </h3>
     <?php
     require("config/conexion.php");
-    $query = "SELECT DISTINCT nomrbre_escenico FROM artistas;"
+    $query = "SELECT DISTINCT nomrbre_escenico FROM artistas;";
     $result = $db -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
