@@ -43,7 +43,8 @@
 
     <h3 align="center"> Para conocer los datos del último tour (el más reciente) de un artista, 
         introduzca el nombre abajo </h3>
-    <form align="center" action="consultas/">
+    <!-- form align="center" action="consultas/" -->
+
 
 
 
@@ -52,7 +53,7 @@
 
     <h3 align="center"> Para conocer los países que serán visitados en un tour, introduzca el 
         nombre del tour abajo </h3>
-    <form align="center" action="consultas/">
+    <!-- form align="center" action="consultas/" -->
 
 
     <!--Consulta 5 i-->
@@ -81,10 +82,10 @@
 
     <h3 align="center"> Para conocer todos los hoteles en los que se ha quedado un artista, y 
         cuántas veces se ha hospedado en cada uno, introduzca el nombre del artista abajo </h3> 
-    <form align="center" action="consultas/">
+    <!--form align="center" action="consultas/"-->
     <h3 align="center">Para mostrar al artista que ha entregado la mayor cantidad de entradas de 
         contesía, haga clic en el boton de abajo </h3>
-    <form align="center" action="consultas/">
+    <!-- form align="center" action="consultas/"-->
 
     <p style ="text-align:center;"> Hola xd </p>
 </body>
