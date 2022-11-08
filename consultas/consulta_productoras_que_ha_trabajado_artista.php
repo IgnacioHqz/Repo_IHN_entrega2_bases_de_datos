@@ -11,11 +11,12 @@
     #-------ihn denuevo-------
     $query = "SELECT DISTINCT segundaTablaIHN.nombre FROM (SELECT * FROM productoras, (SELECT * FROM eventos, #cita: clase SQL AVANZADO online
      artistas WHERE eventos.aid = artistas.aid) as primeraTablaIHN  WHERE productoras.pid = 
-     primeraTablaIHN.pid) as segundaTablaIHN WHERE nombre_artistico='$var';";   #ihn: no estoy seguro de quien va primero en el igual para hacer el join
+     primeraTablaIHN.pid) as segundaTablaIHN WHERE segundaTablaIHN.nombre_artistico='$var';";   #ihn: no estoy seguro de quien va primero en el igual para hacer el join
 
     $result = $db -> prepare($query);
     $result -> execute(); 
     $dataCollected = $result -> fetchAll();
+    print_r($dataCollected)
     ?>
     
     <table>
