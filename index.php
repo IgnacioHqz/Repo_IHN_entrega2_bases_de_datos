@@ -71,7 +71,7 @@
     
     <?php
     require("config/conexion.php");
-    $query= "SELECT DISTINCT tour FROM tours;";
+    $query= "SELECT DISTINCT nombre FROM tours;";
     $result = $db -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
