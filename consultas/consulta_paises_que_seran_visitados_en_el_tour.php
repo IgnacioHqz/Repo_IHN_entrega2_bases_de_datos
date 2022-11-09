@@ -25,4 +25,4 @@
     }
     ?>
     </table>
-<?php include('..templatesihn/footer.html'); ?>
+<?php include('../templatesihn/footer.html'); ?>
