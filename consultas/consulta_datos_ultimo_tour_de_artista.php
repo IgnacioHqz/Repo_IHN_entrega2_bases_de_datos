@@ -8,7 +8,7 @@
     $query = "SELECT tablaIHN3.nombre, tablaIHN3.fecha_inicio, tablaIHN3.fecha_termino FROM 
     (SELECT * FROM artistas, (SELECT * FROM eventos, (SELECT * FROM eventos_del_tour, tours WHERE 
     tours.tid = eventos_del_tour.tid) AS tablaIHN1 WHERE eventos.eid = tablaIHN1.eid) AS tablaIHN2 
-    WHERE artistas.aid=tablaIHN2.aid) AS tablaIHN3;";
+    WHERE artistas.aid=tablaIHN2.aid) AS tablaIHN3 WHERE tablaIHN3.fecha_termino=(SELECT MIN(tours.fecha_termino) FROM (SELECT * FROM tours WHERE fecha_termino<=CAST('2022-11-09' AS date))) AND tablaIHN3.nombre_artistico='$var';";
     $result = $db -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
