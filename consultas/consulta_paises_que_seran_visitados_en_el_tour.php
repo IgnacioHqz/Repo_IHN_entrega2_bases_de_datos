@@ -12,6 +12,7 @@
     $result =$db -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
+    print_r($dataCollected);
     ?>
 
     <table>
