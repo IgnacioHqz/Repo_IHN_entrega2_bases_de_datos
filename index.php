@@ -40,16 +40,31 @@
 
 
 
-
+    <!-- consulta 3 ih-->
     <h3 align="center"> Para conocer los datos del último tour (el más reciente) de un artista, 
         introduzca el nombre abajo </h3>
-    <!-- form align="center" action="consultas/" -->
+    <?php
+    require("config/conexion.php");
+    $query = "SELECT DISTINCT artista FROM artistas;";
+    $result = $db -> prepare($query);
+    $result -> execute();
+    $dataCollected = $result -> fetchAll();
+    ?>
 
+    <form align="center" action="consultas/consulta_datos_ultimo_tour_de_artista.php" method="post">
+        Seleccionar un artista:
+        <select name="artista">
+            <?php
+            foreach ($dataCollected as $d) {
+                echo "<option value=$d[0]>$d[0]</option>";
+            }
+            ?>
+        </select>
+        <br><br>
+        <input type="submit" value="Buscar por tipo">
+    </form>
 
-
-
-
-
+    
 
     <h3 align="center"> Para conocer los países que serán visitados en un tour, introduzca el 
         nombre del tour abajo </h3>
