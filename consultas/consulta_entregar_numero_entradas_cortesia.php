@@ -13,9 +13,11 @@
     $query = "SELECT COUNT(DISTINCT tablaIHN.aid) FROM (SELECT * FROM entradas_cortesia, artistas WHERE entradas_cortesia.aid = artistas.aid) AS tablaIHN WHERE tablaIHN.nombre_artistico='$var';";
     $result = $db -> prepare($query);
     $result -> execute();
-    
+    $result -> fetch(); #cita ihn: https://es.stackoverflow.com/questions/304856/c%C3%B3mo-poder-obtener-los-valores-del-count
+
     #$dataCollected = $result -> fetchAll();
-    print_r($result->fetchColumn());
+    #print_r($result->fetchColumn());
+    echo $result; #cita ihn:https://es.stackoverflow.com/questions/304856/c%C3%B3mo-poder-obtener-los-valores-del-count
     ?>
 
 

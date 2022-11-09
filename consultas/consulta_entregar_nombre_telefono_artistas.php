@@ -15,8 +15,8 @@
 ?>
 <table>
     <tr>
-        <th>Nombre Productora</th>
-        <th>Número de teléfono</th>
+        <th>Nombre del artista</th>
+        <th>Teléfono de contacto</th>
     </tr>
 
     <?php
