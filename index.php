@@ -45,7 +45,7 @@
         introduzca el nombre abajo </h3>
     <?php
     require("config/conexion.php");
-    $query = "SELECT DISTINCT artista FROM artistas;";
+    $query = "SELECT DISTINCT nombre_artistico FROM artistas;";
     $result = $db -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
@@ -61,10 +61,10 @@
             ?>
         </select>
         <br><br>
-        <input type="submit" value="Buscar por tipo">
+        <input type="submit" value="Buscar por artista">
     </form>
 
-    
+
 
     <h3 align="center"> Para conocer los países que serán visitados en un tour, introduzca el 
         nombre del tour abajo </h3>
