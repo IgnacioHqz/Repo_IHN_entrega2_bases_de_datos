@@ -79,10 +79,11 @@
 
     <form align="center" action="consultas/consulta_paises_que_seran_visitados_en_el_tour.php" method="post">
         Seleccionar un tour:
-        <select name="tour">
+        <select name="tour_escogido_ihn">
             <?php
             foreach ($dataCollected as $d) {
-                echo "<option value=$d[0]>$d[0]</option>";
+            #    echo "<option value=$d[0]>$d[0]</option>";
+            echo "<option value=\"$d\">$d<\option>"; #cita ihn: pagina recomendada en issue (https://stackoverflow.com/questions/71140803/values-given-to-post-only-contain-the-first-word-instead-of-whole-string)
             }
             ?>
         </select>
