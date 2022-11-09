@@ -83,7 +83,7 @@
             <?php
             foreach ($dataCollected as $d) {
             #    echo "<option value=$d[0]>$d[0]</option>";
-            echo "<option value=\"$d\">$d<\option>"; #cita ihn: pagina recomendada en issue (https://stackoverflow.com/questions/71140803/values-given-to-post-only-contain-the-first-word-instead-of-whole-string)
+            echo "<option value=\"$d[0]\">$d[0]<\option>"; #cita ihn: pagina recomendada en issue (https://stackoverflow.com/questions/71140803/values-given-to-post-only-contain-the-first-word-instead-of-whole-string)
             }
             ?>
         </select>
