@@ -14,7 +14,7 @@
     $result = $db -> prepare($query);
     $result -> execute();
     $result -> fetch(); #cita ihn: https://es.stackoverflow.com/questions/304856/c%C3%B3mo-poder-obtener-los-valores-del-count
-    print_r($result)
+    print_r($result);
     #$dataCollected = $result -> fetchAll();
     #print_r($result->fetchColumn());
     echo "<tr> <td>$result</td </tr>"; #cita ihn:https://es.stackoverflow.com/questions/304856/c%C3%B3mo-poder-obtener-los-valores-del-count
