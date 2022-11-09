@@ -22,7 +22,7 @@
         </tr>
     <?php
     foreach ($dataCollected as $p) {
-        echo "<tr> <td>$p[13]</td><td>$p[14]</td><td>$p[15]</td> </tr>"
+        echo "<tr> <td>$p[13]</td><td>$p[14]</td><td>$p[15]</td> </tr>";
     }
     ?>
     </table>
