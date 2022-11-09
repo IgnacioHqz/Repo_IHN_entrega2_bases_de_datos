@@ -5,10 +5,11 @@
     <?php
     require("../config/conexion.php");
     $var = $_POST["tour"];
+    print_r($var);
     $query = "SELECT tabla2IHN.nombre, tabla2IHN.pais FROM (SELECT * FROM eventos, (SELECT tours.tid, 
     tours.nombre, eventos_del_tour.tid, eventos_del_tour.eid FROM tours, eventos_del_tour WHERE 
     tours.tid=eventos_del_tour.tid) AS tabla1IHN WHERE eventos.eid=tabla1IHN.eid) AS 
-    tabla2IHN WHERE tabla2IHN.nombre='$var';";
+    tabla2IHN WHERE tabla2IHN.nombre='Bigger than me';";
     $result =$db -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
