@@ -143,6 +143,28 @@
         contesía, haga clic en el boton de abajo </h3>
     <!-- form align="center" action="consultas/"-->
 
+    <h3 align="center">Para obtener una lista de hoteles en los que un artista se ha hospedado y 
+        cuantas veces se ha hospedado en cada uno, seleccione un artista</h3>
+        <?php
+        require("config/conexion.php");
+        $query = "SELECT DISTINCT nombre_artistico FROM artistas;";
+        $result = $db -> prepare($query);
+        $result -> execute();
+        $dataCollected = $result -> fetchAll();
+        ?>
+        <form align="center" action="consultas/consultas_lista_hoteles.php" method="post">
+            seleccionar artista:
+            <select name="artista">
+                <?php
+                foreach ($dataCollecte as $d) {
+                    echo "<option value=\"$d[0]\">$d[0]</option>";
+                }
+                ?>
+            </select>
+            <br><br>
+            <input type="submit" value="Buscar por artista">
+        </form>
+
     <p style ="text-align:center;"> Hola xd </p>
 </body>
 </html>
