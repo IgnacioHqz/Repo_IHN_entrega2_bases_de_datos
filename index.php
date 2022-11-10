@@ -143,6 +143,8 @@
         contesía, haga clic en el boton de abajo </h3>
     <!-- form align="center" action="consultas/"-->
 
+    <!--consulta 6-->
+
     <h3 align="center">Para obtener una lista de hoteles en los que un artista se ha hospedado y 
         cuantas veces se ha hospedado en cada uno, seleccione un artista</h3>
         <?php
@@ -156,7 +158,7 @@
             seleccionar artista:
             <select name="artista">
                 <?php
-                foreach ($dataCollecte as $d) {
+                foreach ($dataCollected as $d) {
                     echo "<option value=\"$d[0]\">$d[0]</option>";
                 }
                 ?>
