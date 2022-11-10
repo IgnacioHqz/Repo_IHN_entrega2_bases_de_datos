@@ -7,7 +7,7 @@
     $var = $_POST["artista"];
     $query = "SELECT DISTINCT hospedaje_traslado.nombre_hotel, COUNT(hospedaje_traslado.cod_reserva)
      AS numero_hospedajes FROM hospedaje_traslado, artistas WHERE artista.nombre_artistico='$var' AND 
-     hospedaje_traslado.aid=artistas.aid GROUP BY nombre_hotel";
+     hospedaje_traslado.aid=artistas.aid GROUP BY nombre_hotel;";
     $result = $db -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
