@@ -8,7 +8,7 @@
     <br>
 
 
-
+    <!-- consulta 1 i-->
     <h3 align="center"> Entregar un listado del nombre y teléfono de contacto de todos los artistas </h3>
     <form align="center" action="consultas/consulta_entregar_nombre_telefono_artistas.php" method="post">
         <input type="submit" value="Buscar">
@@ -18,7 +18,7 @@
 
 
     <h3 align="center"> Para conocer el número de entradas de cortesía que ha entregado un artista, 
-        seleccione el nombre abajo </h3>
+        seleccione el nombre abajo MALA </h3>
     <?php
     require("config/conexion.php");
     $result = $db -> prepare("SELECT DISTINCT nombre_artistico FROM artistas;");  
@@ -117,7 +117,7 @@
     <!--consulta 2 ig-->
     <!-- h3 align="center"> Para conocer todos los hoteles en los que se ha quedado un artista, y 
         cuántas veces se ha hospedado en cada uno, introduzca el nombre del artista abajo </h3--> 
-    <h3 align="center">Si quiere conocer el número de entradas que ha entregado un artista, seleccione un artista abajo</h3>
+    <h3 align="center">Si quiere conocer el número de entradas de cortesía que ha entregado un artista, seleccione un artista abajo</h3>
     <?php
     require("config/conexion.php");
     $query = "SELECT DISTINCT nombre_artistico FROM artistas;";
