@@ -167,6 +167,6 @@
             <input type="submit" value="Buscar por artista">
         </form>
 
-    <p style ="text-align:center;"> Hola xd </p>
+    <p style ="text-align:center;"></p>
 </body>
 </html>
