@@ -154,7 +154,7 @@
         $result -> execute();
         $dataCollected = $result -> fetchAll();
         ?>
-        <form align="center" action="consultas/consultas_lista_hoteles.php" method="post">
+        <form align="center" action="consultas/consulta_lista_hoteles.php" method="post">
             seleccionar artista:
             <select name="artista">
                 <?php
